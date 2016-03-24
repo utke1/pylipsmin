@@ -1,5 +1,5 @@
-#difndef AP_HPP
-#define AP_HPP
+#ifndef _PYLIPSMIN_HPP_
+#define _PYLIPSMIN_HPP_
 #define PY_ARRAY_UNIQUE_SYMBOL PyArrayHandle
 
 #include "num_util.h"
@@ -27,8 +27,8 @@ void c_wrapped_LiPsMin(PyObject* file_obj,
 BOOST_PYTHON_MODULE(_lipsmin)
 {
 	using namespace boost::python;
-	import_array(); 										/* some kind of hack to get numpy working */
-	bpn::array::set_module_and_type("numpy", "ndarray");	/* some kind of hack to get numpy working */
+	import_array(); /* some kind of hack to get numpy working */
+	bpn::array::set_module_and_type("numpy", "ndarray"); /* some kind of hack to get numpy working */
 
 	scope().attr("__doc__") ="unused: moved docstring to adolc.py";
 

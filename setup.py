@@ -39,7 +39,7 @@ if sys.platform == 'darwin' and os.environ.get('CC', 'clang').find('clang') > 0:
 
 include_dirs = [get_numpy_include_dirs()[0], boost_include_path, lipsmin_include_path]
 library_dirs = [boost_library_path1, boost_library_path2, lipsmin_library_path1, lipsmin_library_path2]
-libraries = ['boost_python','lipsmin']
+libraries = ['boost_python','LiPsMin']
 
 print ''
 print '\033[1;31mPlease check that the following settings are correct for your system:\n\033[1;m'
@@ -179,7 +179,7 @@ options_dict.update({
 'url':URL,
 'packages' :packages,
 'ext_package' : 'lipsmin',
-'ext_modules': [Extension('_lipsmin', ['lipsmin/src/py_lipsmin.cpp',  'lipsmin/src/py_interpolation.cpp', 'lipsmin/src/num_util.cpp'],
+'ext_modules': [Extension('_lipsmin', ['lipsmin/src/pylipsmin.cpp', 'lipsmin/src/num_util.cpp'],
                                 include_dirs = ['lipsmin/src'] + include_dirs,
                                 library_dirs = library_dirs,
                                 runtime_library_dirs = library_dirs,
